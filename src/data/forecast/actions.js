@@ -4,11 +4,11 @@ export const getForecast = () => ({
   type: GET_FORECAST_REQUEST,
 });
 
-export const getForecastSuccess = ({ forecast, city }) => {
+export const getForecastSuccess = ({ forecast }) => {
   const predictions = { ...forecast };
   return {
     type: GET_FORECAST_SUCCESS,
-    payload: { predictions, city },
+    payload: { predictions },
   };
 };
 

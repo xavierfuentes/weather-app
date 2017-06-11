@@ -1,4 +1,4 @@
-import { GET_LOCATION_REQUEST, GET_LOCATION_SUCCESS, GET_LOCATION_FAILURE } from './types';
+import { GET_LOCATION_REQUEST, GET_LOCATION_SUCCESS, GET_LOCATION_FAILURE, GET_CITY_SUCCESS } from './types';
 
 export const initialState = {
   error: null,
@@ -6,6 +6,7 @@ export const initialState = {
   fetching: true,
   latitude: null,
   longitude: null,
+  city: null,
 };
 
 const locationReducer = (state = initialState, { type, payload } = {}) => {
@@ -31,6 +32,12 @@ const locationReducer = (state = initialState, { type, payload } = {}) => {
         error: payload.error,
         fetchedAt: payload.timestamp,
         fetching: false,
+      };
+    case GET_CITY_SUCCESS:
+      return {
+        ...state,
+        error: null,
+        city: payload.city,
       };
 
     default:

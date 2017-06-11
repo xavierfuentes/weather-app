@@ -14,13 +14,11 @@ it('handles GET_FORECAST_REQUEST', () => {
 });
 
 it('handles GET_FORECAST_SUCCESS', () => {
-  const city = {};
   const forecast = {};
-  expect(forecastReducer(initialState, getForecastSuccess({ forecast, city }))).toEqual({
+  expect(forecastReducer(initialState, getForecastSuccess({ forecast }))).toEqual({
     ...initialState,
     error: null,
     fetching: false,
-    city,
     predictions: forecast,
   });
 });

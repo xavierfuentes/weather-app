@@ -5,7 +5,7 @@ import locationReducer from './location/reducer';
 import forecastReducer from './forecast/reducer';
 
 export default combineReducers({
-  ui: uiReducer,
-  location: locationReducer,
   forecast: forecastReducer,
+  location: locationReducer,
+  ui: uiReducer,
 });

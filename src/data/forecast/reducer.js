@@ -3,7 +3,6 @@ import { GET_FORECAST_REQUEST, GET_FORECAST_SUCCESS, GET_FORECAST_FAILURE } from
 export const initialState = {
   error: null,
   fetching: false,
-  city: null,
   predictions: null,
 };
 
@@ -16,12 +15,11 @@ const locationReducer = (state = initialState, { type, payload } = {}) => {
         fetching: true,
       };
     case GET_FORECAST_SUCCESS:
-      const { predictions, city } = payload;
+      const { predictions } = payload;
       return {
         ...state,
         error: null,
         fetching: false,
-        city,
         predictions,
       };
     case GET_FORECAST_FAILURE:
