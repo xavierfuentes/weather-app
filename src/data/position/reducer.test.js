@@ -15,19 +15,23 @@ it('handles GET_POSITION_REQUEST', () => {
 
 it('handles GET_POSITION_SUCCESS', () => {
   const coords = { latitude: 0, longitude: 0 };
-  expect(positionReducer(initialState, getPositionSuccess({ coords }))).toEqual({
+  const timestamp = null;
+  expect(positionReducer(initialState, getPositionSuccess({ coords, timestamp }))).toEqual({
     ...initialState,
     error: null,
+    fetchedAt: timestamp,
     fetching: false,
-    ...coords
+    ...coords,
   });
 });
 
 it('handles GET_POSITION_FAILURE', () => {
   const error = 'Error';
-  expect(positionReducer(initialState, getPositionFailure({error}))).toEqual({
+  const timestamp = null;
+  expect(positionReducer(initialState, getPositionFailure({ error, timestamp }))).toEqual({
     ...initialState,
     error,
+    fetchedAt: timestamp,
     fetching: false,
   });
 });

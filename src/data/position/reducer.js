@@ -2,7 +2,8 @@ import { GET_POSITION_REQUEST, GET_POSITION_SUCCESS, GET_POSITION_FAILURE } from
 
 export const initialState = {
   error: null,
-  fetching: false,
+  fetchedAt: null,
+  fetching: true,
   latitude: null,
   longitude: null,
 };
@@ -19,6 +20,7 @@ const positionReducer = (state = initialState, { type, payload } = {}) => {
       return {
         ...state,
         error: null,
+        fetchedAt: payload.timestamp,
         fetching: false,
         latitude: payload.coords.latitude,
         longitude: payload.coords.longitude,
@@ -27,6 +29,7 @@ const positionReducer = (state = initialState, { type, payload } = {}) => {
       return {
         ...state,
         error: payload.error,
+        fetchedAt: payload.timestamp,
         fetching: false,
       };
 
