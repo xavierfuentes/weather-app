@@ -1,4 +1,4 @@
-import { GET_POSITION_REQUEST, GET_POSITION_SUCCESS, GET_POSITION_FAILURE } from './types';
+import { GET_LOCATION_REQUEST, GET_LOCATION_SUCCESS, GET_LOCATION_FAILURE } from './types';
 
 export const initialState = {
   error: null,
@@ -8,15 +8,15 @@ export const initialState = {
   longitude: null,
 };
 
-const positionReducer = (state = initialState, { type, payload } = {}) => {
+const locationReducer = (state = initialState, { type, payload } = {}) => {
   switch (type) {
-    case GET_POSITION_REQUEST:
+    case GET_LOCATION_REQUEST:
       return {
         ...state,
         error: null,
         fetching: true,
       };
-    case GET_POSITION_SUCCESS:
+    case GET_LOCATION_SUCCESS:
       return {
         ...state,
         error: null,
@@ -25,7 +25,7 @@ const positionReducer = (state = initialState, { type, payload } = {}) => {
         latitude: payload.coords.latitude,
         longitude: payload.coords.longitude,
       };
-    case GET_POSITION_FAILURE:
+    case GET_LOCATION_FAILURE:
       return {
         ...state,
         error: payload.error,
@@ -38,4 +38,4 @@ const positionReducer = (state = initialState, { type, payload } = {}) => {
   }
 };
 
-export default positionReducer;
+export default locationReducer;
