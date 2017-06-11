@@ -2,6 +2,8 @@
 
 ## Quick start
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/xavifuefer/weather-app.svg)](https://greenkeeper.io/)
+
 1. Clone the app `git clone https://github.com/xavifuefer/weather-app.git`
 2. Install its dependencies `npm install`
 
