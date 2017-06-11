@@ -1,9 +1,10 @@
 import { get } from 'axios';
-import { call, fork, take } from 'redux-saga/effects';
+import { call, fork, put, take } from 'redux-saga/effects';
 
 import { GET_LOCATION_SUCCESS } from '../location/types';
+import { getForecast, getForecastSuccess, getForecastFailure } from './actions';
 
-function getForecast(coords) {
+function getForecastApi(coords) {
   return get('/forecast', { params: coords }).then(response => response.data).catch(error => error);
 }
 
@@ -11,7 +12,14 @@ function* handleRequestWeatherForecast() {
   // eslint-disable-next-line no-constant-condition
   while (true) {
     const { payload } = yield take(GET_LOCATION_SUCCESS);
-    const { list, city, error} = yield call(getForecast, payload.coords);
+    yield put(getForecast());
+    const { forecast, city, error } = yield call(getForecastApi, payload.coords);
+
+    if (city.id && !error) {
+      yield put(getForecastSuccess({ forecast, city }));
+    } else {
+      yield put(getForecastFailure({ error }));
+    }
   }
 }
 

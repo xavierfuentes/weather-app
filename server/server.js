@@ -9,7 +9,14 @@ function handleGetForecast(request, reply) {
   axios
     .get(`${config.owmUrl}?lat=${latitude}&lon=${longitude}&units=${config.units}&appid=${config.owmApiKey}`)
     .then(response => {
-      reply({ list: response.data.list, city: response.data.city });
+      const { list, city } = response.data;
+      // const days = {};
+      // let i = 5;
+      // while (list.length > 0) {
+      //   days[i] = list.splice(-8);
+      //   i--;
+      // }
+      reply({ forecast: list, city });
     });
 }
 
