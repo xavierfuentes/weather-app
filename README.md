@@ -57,5 +57,10 @@ The app is ready to be deployed!
 
 - Improve the docs
 - Use FlowType
+- Add tests for sagas
+- Add loading page/spinner
+- Add tests for backend
+- Improve error handling
+- Allow users to change the city manually
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
