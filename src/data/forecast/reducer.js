@@ -1,6 +1,7 @@
-import { GET_FORECAST_REQUEST, GET_FORECAST_SUCCESS, GET_FORECAST_FAILURE } from './types';
+import { GET_FORECAST_REQUEST, GET_FORECAST_SUCCESS, GET_FORECAST_FAILURE, SET_PREDICTION_ACTIVE } from './types';
 
 export const initialState = {
+  active: 0,
   error: null,
   fetching: false,
   predictions: null,
@@ -28,6 +29,8 @@ const locationReducer = (state = initialState, { type, payload } = {}) => {
         error: payload.error,
         fetching: false,
       };
+    case SET_PREDICTION_ACTIVE:
+      return { ...state, active: payload.active };
 
     default:
       return state;

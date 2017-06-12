@@ -17,10 +17,10 @@ function* handleRequestWeatherForecast() {
     const { forecast, city, error } = yield call(getForecastApi, payload.coords);
 
     if (city.id && !error) {
-      yield put(getForecastSuccess({ forecast }));
-      yield put(getCitySuccess({ city }));
+      yield put(getForecastSuccess(forecast));
+      yield put(getCitySuccess(city));
     } else {
-      yield put(getForecastFailure({ error }));
+      yield put(getForecastFailure(error));
     }
   }
 }

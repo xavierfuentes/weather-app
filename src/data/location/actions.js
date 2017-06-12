@@ -14,7 +14,7 @@ export const getLocationFailure = ({ error, timestamp }) => ({
   payload: { error, timestamp },
 });
 
-export const getCitySuccess = ({ city }) => ({
+export const getCitySuccess = city => ({
   type: GET_CITY_SUCCESS,
   payload: { city },
 });

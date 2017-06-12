@@ -15,7 +15,7 @@ it('handles GET_FORECAST_REQUEST', () => {
 
 it('handles GET_FORECAST_SUCCESS', () => {
   const forecast = {};
-  expect(forecastReducer(initialState, getForecastSuccess({ forecast }))).toEqual({
+  expect(forecastReducer(initialState, getForecastSuccess(forecast))).toEqual({
     ...initialState,
     error: null,
     fetching: false,
@@ -25,7 +25,7 @@ it('handles GET_FORECAST_SUCCESS', () => {
 
 it('handles GET_FORECAST_FAILURE', () => {
   const error = 'Error';
-  expect(forecastReducer(initialState, getForecastFailure({ error }))).toEqual({
+  expect(forecastReducer(initialState, getForecastFailure(error))).toEqual({
     ...initialState,
     error,
     fetching: false,
