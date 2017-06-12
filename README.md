@@ -1,5 +1,7 @@
 5 Day Weather Forecast using [OpenWeatherMap API](http://openweathermap.org/forecast5).
 
+![Mockup](http://www.creativespecks.com/wp-content/uploads/2016/04/Day-5-Weather.png)
+
 ## Quick start
 
 1. Clone the app `git clone https://github.com/xavifuefer/weather-app.git`
