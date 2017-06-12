@@ -6,12 +6,14 @@ import 'semantic-ui-css/semantic.min.css';
 /* eslint-enable import/first */
 
 import City from '../../containers/City/City';
+import PredictionsList from '../../containers/PredictionsList/PredictionsList';
 
 const AppLayout = ({ isAppReady }) =>
   <main>
     {isAppReady
       ? <section>
           <City />
+          <PredictionsList />
         </section>
       : <article>Loading...</article>}
   </main>;

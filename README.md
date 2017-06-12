@@ -56,6 +56,7 @@ The app is ready to be deployed!
 ## Future additions
 
 - Restructure and clean the state + data flow
+- use momentjs
 - Improve the docs
 - Use FlowType
 - Add tests for sagas
