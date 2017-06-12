@@ -1,4 +1,4 @@
-5 Day Weather Forecast using [OpenWeatherMap API](http://openweathermap.org/forecast5).
+5 Day Weather Forecast using [OpenWeatherMap API](http://openweathermap.org/forecast5). Based on [this exercise](https://github.com/buildit/org-design/blob/master/Recruitment/Exercises/js_engineer_contract.md)
 
 ![Mockup](http://xavifuentes.io.bysh.me/weather_app.png)
 
