@@ -26,13 +26,24 @@ After [starting the app](#quick-start) the folder structure should look like thi
 ```
 weather-app/
   README.md // This file
+  .eslintrc // shows linting result in the IDE
+  .gitignore // quite self explanatory
+  yarn.lock // yarn stuff
   node_modules/ // node dependencies
   package.json // project package definition
   public/
     index.html
     favicon.ico
+    manifest.json // for PWA
+  server
+    config.js // configuration for the server
+    server.js // proxy server for OWM to avoid CORS
   src/ // where the magic happens
-    index.js // Invokes the redux store config method and instantiates the app in the dom
+    components // stateless components
+    containers // stateful components
+    data // all redux related and data management
+    index.js // entry point for the app
+    registerServiceWorker.js // service worker for PWA
 ```
 
 ## npm start
