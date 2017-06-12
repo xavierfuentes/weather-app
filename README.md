@@ -1,6 +1,6 @@
 5 Day Weather Forecast using [OpenWeatherMap API](http://openweathermap.org/forecast5).
 
-![Mockup](http://www.creativespecks.com/wp-content/uploads/2016/04/Day-5-Weather.png)
+![Mockup](http://xavifuentes.io.bysh.me/weather_app.png)
 
 ## Quick start
 
