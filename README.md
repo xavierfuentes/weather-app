@@ -57,14 +57,15 @@ The app is ready to be deployed!
 
 ## Future additions
 
-- Restructure and clean the state + data flow
-- use momentjs
+- Use momentjs
+- Use Semantic UI React components
 - Improve the docs
 - Use FlowType
-- Add tests for sagas
+- Add tests for sagas to improve coverage
 - Add loading page/spinner
 - Add tests for backend
 - Improve error handling
 - Allow users to change the city manually
+- Restructure and clean the state + data flow
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
