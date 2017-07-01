@@ -5,14 +5,14 @@ import 'sanitize.css/sanitize.css';
 import 'semantic-ui-css/semantic.min.css';
 /* eslint-enable import/first */
 
-import City from '../../containers/City/City';
+import ActivePrediction from '../../containers/ActivePrediction/ActivePrediction';
 import PredictionsList from '../../containers/PredictionsList/PredictionsList';
 
 const AppLayout = ({ isAppReady }) =>
   <main>
     {isAppReady
       ? <section>
-          <City />
+          <ActivePrediction />
           <PredictionsList />
         </section>
       : <article>Loading...</article>}

@@ -6,11 +6,11 @@ function formatDate(timestamp) {
   return `${days[timestamp.getDay()]} - ${months[timestamp.getMonth()]} ${("0" + timestamp.getDate()).slice(-2)}`;
 }
 
-const CityLayout = ({ city, timestamp }) => (
+const ActivePredictionLayout = ({ city, timestamp }) => (
   <main>
     <div>{city.name}</div>
-    <div>{formatDate(timestamp)}</div>
+    {timestamp && <div>{formatDate(timestamp)}</div>}
   </main>
 );
 
-export default CityLayout;
+export default ActivePredictionLayout;

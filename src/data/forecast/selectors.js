@@ -8,5 +8,7 @@ export const activePredictionSelector = createSelector(forecastSelector, forecas
 export const activePredictionDateTimeSelector = createSelector(
   allPredictionsSelector,
   activePredictionSelector,
-  (predictions, active) => new Date(predictions[active].dt_txt)
+  (predictions, active) => {
+    return active && new Date(predictions[active].dt_txt);
+  }
 );
