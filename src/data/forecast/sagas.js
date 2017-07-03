@@ -31,7 +31,7 @@ function* handleRequestWeatherForecast() {
 
     if (city.id && !error) {
       const sortedTimestamps = Object.keys(forecast).sort((a, b) => Number(a) - Number(b));
-      const closestPrediction = sortedTimestamps[0];
+      const closestPrediction = forecast[sortedTimestamps[0]];
 
       yield put(getForecastSuccess(forecast));
       yield put(getCitySuccess(city));

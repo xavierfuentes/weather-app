@@ -30,7 +30,7 @@ const locationReducer = (state = initialState, { type, payload } = {}) => {
         fetching: false,
       };
     case SET_PREDICTION_ACTIVE:
-      return { ...state, active: payload.prediction };
+      return { ...state, active: payload.prediction.dt };
 
     default:
       return state;
