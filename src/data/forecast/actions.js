@@ -19,5 +19,5 @@ export const getForecastFailure = error => ({
 
 export const activatePrediction = prediction => ({
   type: SET_PREDICTION_ACTIVE,
-  payload: { prediction },
+  payload: { prediction: prediction.dt },
 });

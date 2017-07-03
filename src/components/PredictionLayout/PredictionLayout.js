@@ -15,7 +15,7 @@ function formatTemperature(temperature) {
 
 const PredictionLayout = ({ prediction, onClick }) => {
   const handlePredictionClick = event => {
-    onClick(prediction.dt);
+    onClick(prediction);
   };
 
   return (
