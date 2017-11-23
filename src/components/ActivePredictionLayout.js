@@ -1,8 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import ActivePredictionStyled from './ActivePredictionStyled';
 import CityNameStyled from './CityNameStyled';
 import DateTimeStyled from './DateTimeStyled';
+
+const ActivePredictionStyled = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 .938em;
+`;
 
 function formatDate(timestamp) {
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
+import { throttle } from 'lodash';
 
-import PredictionsListStyled from './PredictionsListStyled';
-import PredictionLayout from '../PredictionLayout/PredictionLayout';
+import PredictionLayout from './PredictionLayout';
 
-class PredictionsListLayout extends React.Component {
-  PredictionsListElement = null;
+const PredictionsListStyled = styled.nav`
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+  overflow-x: scroll;
+  margin: 0 calc(50% - 9.375em);
 
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+class PredictionsListLayout extends React.PureComponent {
   componentDidMount() {
     this.PredictionsListElement = ReactDOM.findDOMNode(this);
     this.attachScrollListener();
@@ -16,7 +29,7 @@ class PredictionsListLayout extends React.Component {
     this.dettachScrollListener();
   }
 
-  onScrollChange(event) {
+  onScrollChange = (event) => {
     const predictionWidth = event.target.scrollWidth / (Object.keys(this.props.predictions).length + 2);
     const predictionCentered = Math.floor(event.target.scrollLeft / predictionWidth);
     const predictionToActivate = Object.keys(this.props.predictions)[predictionCentered];
@@ -26,8 +39,8 @@ class PredictionsListLayout extends React.Component {
   }
 
   attachScrollListener() {
-    this.PredictionsListElement.addEventListener('scroll', this.onScrollChange.bind(this));
-    this.PredictionsListElement.addEventListener('resize', this.onScrollChange.bind(this));
+    this.PredictionsListElement.addEventListener('scroll', throttle(this.onScrollChange, 300));
+    this.PredictionsListElement.addEventListener('resize', throttle(this.onScrollChange, 300));
   }
 
   dettachScrollListener() {
@@ -38,7 +51,8 @@ class PredictionsListLayout extends React.Component {
   render() {
     const { activatePrediction } = this.props;
     // add extra predictions for "coverflow" effect
-    const predictions = { 0: {}, ...this.props.predictions, 9999999999: {} };
+    // const predictions = { 0: {}, ...this.props.predictions, 9999999999: {} };
+    const predictions = this.props.predictions;
 
     return (
       <PredictionsListStyled>
