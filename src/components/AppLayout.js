@@ -13,14 +13,17 @@ const AppStyled = styled.main`
   font-family: Lato, sans-serif;
 `;
 
-const AppLayout = ({ isAppReady }) =>
+const AppLayout = ({ isAppReady }) => (
   <AppStyled>
-    {isAppReady
-      ? <section>
-          <ActivePrediction />
-          <PredictionsList />
-        </section>
-      : <article>Loading...</article>}
-  </AppStyled>;
+    {isAppReady ? (
+      <section>
+        <ActivePrediction />
+        <PredictionsList />
+      </section>
+    ) : (
+      <article>Loading...</article>
+    )}
+  </AppStyled>
+);
 
 export default AppLayout;
